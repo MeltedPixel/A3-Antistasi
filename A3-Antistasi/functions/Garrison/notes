@@ -9,11 +9,9 @@
 [DONE] Integration with the current system
 [DONE] Map porting on Altis, Tanoa and Malden
 [DONE] Test it for SP, local MP and dedi MP
-
 ================================================================================
 MERGED INTO UNSTABLE AND TESTED BY POT
 ================================================================================
-
 [DONE] Improvement of the cyclic spawn system
 [DONE] Integration into the convoy system, to use reinforce convoys
 [DONE] Improve the convoy system to spawn convoys
@@ -23,36 +21,70 @@ MERGED INTO UNSTABLE AND TESTED BY POT
 [DONE] Write the "AI", which replenishes airports
 [DONE] Rework AIVehInit to work for convoy vehicles - is not needed, it will behave correctly
 [DONE] Add simple fight mechanic for roadblock engagements
-
 ================================================================================
 SPLIT HERE FOR PR 2.2
 ================================================================================
+------------ Distance script ---------------------------------------------------
+[DONE] Rework to make it readable
+[DONE] Ensure that only players and squadleader spawn stuff
+[DONE] Transfer despawn to marker scripts
+[DONE] Create a script to check for spawn or despawn
+------------ Unit spawns -------------------------------------------------------
+[DONE] Add check for units to be marked unavailable, if the outpost is not suited to have them
+[DONE] Improve distance script and integrate the spawn script
+------------ Fixed size arrays -------------------------------------------------
+[DONE] Rework addToGarrison and addToRequested
+[DONE] Make standard garrison a fixed size array
+[DONE] Fix markerChange to work with fixed size arrays
+[DONE] Fix reinforce selection to actually select stuff
+------------ Unit behavior at outpost ------------------------------------------
+[DONE] Create a script that crew units are maning their vehicles
 
-Add helicopter types for spoffy
-Make the AI follow the pathfinding way
+================================================================================
+FINISH FOR DEV MEETING 25.1.20
+================================================================================
+
+------------ Distance script ---------------------------------------------------
+Faster way to check for vehicle
+Make roadblocks functioning again
+Make civs working again
+Remove spawned in markers
+------------ Unit handling -----------------------------------------------------
+[WIP] Handle replaced units in fn_updateGarrison
+Add the functions to send troops (remove from garrison)
+------------ Unit spawns -------------------------------------------------------
+Change vehicle getIn EH to handle stolen vehicles correctly
+------------ Reinforcements selection ------------------------------------------
+Improve the AI, which chooses the units
+Stop the AI from bypassing the economy
+------------ Fix broken stuff --------------------------------------------------
+[WIP] Enabling it for player side, not only AI
+[WIP] Optimisation for speed and data size
+
+Handle statics
+[Won't do] Add helicopter types for spoffy
+[Mostly done, check the FSM]Make the AI follow the pathfinding way
 Clean up code
 Add code documentation
 Improve patrol detection
-Add check for units to be marked unavailable, if the outpost is not suited to have them
-EH for the groups to man vehicles
+[WIP, needs change in the VCOM routines] EH for the groups to man vehicles
 Cleanup function
-Add the functions to send troops (remove from garrison)
-Enabling it for player side, not only AI
 Reinforcements moves
-Stop the AI from bypassing the economy
-Optimisation for speed and data size
 Improve the convoy system to handle fights
-Rework unit detection system
-Improve the AI, which chooses the units
+Rework unit detection system (Squadleader and medics)
 Better troup compositions
 Balancing
-Handle statics
 Handle statics in convoys
-Improve distance script
 Two man team (Sniper Spotter, etc.)
-Improve the convoy system to handle attacks
-Find a way to assign squadleader properly
 Finalizing cyclic spawn
-Improve the replenish function to get actual results
+Improve the replenish function
 Reorder convoys on despawn (Reassign vehicles if one is destroyed and so on)
 Reorder all parameters in the same order
+
+================================================================================
+Files that need a rework
+================================================================================
+- fn_initSpawnPlaces
+- fn_selectReinfUnits
+- fn_shouldReinforce
+- fn_landThreatEval

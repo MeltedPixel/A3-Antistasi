@@ -5,7 +5,7 @@ class A3A
 		//Main initialisation functions.
 		class initServer {};
 		class initClient {};
-		
+
 		//Other initialisation functions (generally called by the above)
 		class cityinfo {};
 		class credits {};
@@ -13,12 +13,12 @@ class A3A
 		class initGarrisons {};
 		class initGetMissionPath {};
 		class initSpawnPlaces {};
-		
+
 		class initVar {};
 		class initVarClient {};
 		class initVarCommon {};
 		class initVarServer {};
-		
+
 		class initZones {};
 		class modBlacklist {};
 		class playerMarkers {};
@@ -27,7 +27,7 @@ class A3A
 		class resourcecheck {};
 		class tags {};
 	};
-	
+
 	class Base
 	{
 		class addActionBreachVehicle {};
@@ -72,6 +72,7 @@ class A3A
 		class mrkUpdate {};
 		class mrkWIN {};
 		class NATOFT {};
+        class needsSpawn {};
 		class numericRank {};
 		class onHeadlessClientDisconnect {};
 		class onPlayerDisconnect {};
@@ -277,8 +278,11 @@ class A3A
 
 	class Garrison
 	{
-		class addGarrison {};
-		class addRequested {};
+        class addGarrisonLine {};
+		class addToGarrison {};
+        class addToOver {};
+		class addToRequested {};
+        class canPlaceVehicleAtMarker {};
 		class checkGroupType {};
 		class checkVehicleType {};
 		class countGarrison {};
@@ -291,6 +295,7 @@ class A3A
 		class getVehicleCrew {};
 		class initPreference {};
 		class logArray {};
+        class markerAlert {};
 		class replenishGarrison {};
 		class selectGroupType {};
 		class selectReinfUnits {};
